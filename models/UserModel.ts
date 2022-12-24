@@ -17,6 +17,12 @@ export interface IUserSignIn {
   password: IUser["password"];
 }
 
+export interface IUserResponse {
+  email: IUser["email"];
+  firstName: string;
+  lastName: string;
+}
+
 const userSchema = new Schema<IUser>(
   {
     firstName: { type: String, required: true },

@@ -10,8 +10,8 @@ export default class AuthRepository {
     return await user.save();
   };
 
-  public signIn = async (userSignInData: IUserSignIn): Promise<any> => {
-    // await ....mongo
+  public findUserByEmail = async (email: IUser["email"]): Promise<IUser | null> => {
+    return await User.findOne({ email });
   };
 
   public deleteUser = async (userId: IUser["id"]): Promise<any> => {
