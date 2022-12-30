@@ -1,5 +1,4 @@
-import { injectable } from "inversify";
-import { inject } from "inversify/lib/annotation/inject";
+import { injectable, inject } from "inversify";
 import { IUser, IUserRegistration, IUserResponse, IUserSignIn } from "../models/UserModel";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";

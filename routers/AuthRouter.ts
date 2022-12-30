@@ -1,12 +1,11 @@
 import { NextFunction, Request, Response, Router } from "express";
-import { injectable } from "inversify";
-import { inject } from "inversify/lib/annotation/inject";
+import { injectable, inject } from "inversify";
 import { IUser, IUserRegistration, IUserSignIn } from "../models/UserModel";
 import AuthService from "../services/AuthService";
 
 @injectable()
 export default class AuthRouter {
-  private router = Router();
+  public router = Router();
 
   public constructor(
     @inject(AuthService)

@@ -1,13 +1,13 @@
 const express = require("express");
-const cors = require("cors");
-import * as AuthRouter from "./routers/AuthRouter";
+import container from "./common/container";
+import BaseRouter from "./routers/BaseRouter";
 
 const app = express();
-app.use(cors());
 app.use(express.json());
 
-app.use("/user", AuthRouter);
+const baseRouter = container.get(BaseRouter);
+app.use(baseRouter.router);
 
 app.listen(3015, () => {
-  console.log("Running an express server with Postgress at port 3015");
+  console.log("Running an express server at port 3015");
 });
