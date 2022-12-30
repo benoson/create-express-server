@@ -1,12 +1,12 @@
 import "reflect-metadata";
 import { injectable } from "inversify";
-import User, { IUser, IUserRegistration, IUserSignIn } from "../models/UserModel";
+import User, { IUser, IUserRegistration, IUserSignIn } from "../../models/UserModel";
 
 @injectable()
 export default class AuthRepository {
   public constructor() {}
 
-  public register = async (userRegistrationData: IUserRegistration): Promise<any> => {
+  public register = async (userRegistrationData: IUserRegistration): Promise<IUser> => {
     const user = new User(userRegistrationData);
     return await user.save();
   };

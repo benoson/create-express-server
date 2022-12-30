@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response, Router } from "express";
 import { injectable, inject } from "inversify";
-import { IUser, IUserRegistration, IUserSignIn } from "../models/UserModel";
-import AuthService from "../services/AuthService";
+import { IUser, IUserRegistration, IUserSignIn } from "../../models/UserModel";
+import AuthService from "../../services/auth/AuthService";
 
 @injectable()
 export default class AuthRouter {

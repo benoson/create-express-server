@@ -1,7 +1,7 @@
 import { Router, Request, Response, NextFunction } from "express";
 import cors from "cors";
 import { injectable, inject } from "inversify";
-import AuthRouter from "./AuthRouter";
+import AuthRouter from "./auth/AuthRouter";
 
 @injectable()
 export default class BaseRouter {
