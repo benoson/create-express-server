@@ -1,9 +1,11 @@
 const express = require("express");
 import container from "./common/container";
+import initMongo from "./common/mongoose";
 import BaseRouter from "./routers/BaseRouter";
 
 const app = express();
 app.use(express.json());
+initMongo();
 
 const baseRouter = container.get(BaseRouter);
 app.use(baseRouter.router);
