@@ -15,7 +15,7 @@ export default class AuthRepository {
     return await User.findOne({ email });
   };
 
-  public deleteUser = async (userId: IUser["id"]): Promise<any> => {
-    // await ....mongo
+  public deleteUserById = async (userId: IUser["id"]): Promise<any> => {
+    await User.findByIdAndRemove(userId);
   };
 }

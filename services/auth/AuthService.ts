@@ -58,7 +58,7 @@ export default class AuthService {
   };
 
   public deleteUser = async (userId: IUser["id"]): Promise<IServiceResult<IUser["id"]>> => {
-    await this.authRepository.deleteUser(userId);
+    await this.authRepository.deleteUserById(userId);
     return {
       ok: true,
       data: userId,
